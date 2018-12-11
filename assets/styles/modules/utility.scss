@@ -1,0 +1,57 @@
+/// Imports
+@import "./variables";
+@import "./mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: #ddd;
+}
+
+::-moz-selection {
+    background: #ddd;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.abs {
+    position: absolute;
+
+    &--full {
+        @include abs-position(0,0,0,0);
+    }
+}
+
+.rel {
+    position: relative;
+
+    &--full {
+        height: 100%;
+        width: 100%;
+    }
+
+    &--viewport {
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+.fixed {
+    position: fixed;
+
+    &--full {
+        @include abs-position(0,0,0,0);
+    }
+}

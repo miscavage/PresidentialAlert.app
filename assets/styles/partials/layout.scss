@@ -1,0 +1,50 @@
+/// Imports
+@import "../modules/mixins";
+@import "../modules/variables";
+
+html, body {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+}
+
+.layout {
+    display: block;
+    background-color: $color_white;
+}
+
+.background-image {
+    display: block;
+    background-color: $color_white;
+    opacity: 0.75;
+    filter: blur(12px);
+    background-image: url(../images/photos/flag.png);
+
+    @include abs-position(-25px, -25px, -25px, -25px);
+}
+
+.main {
+    @media (min-height:0px) and (max-height:640px) {
+        overflow: hidden;
+        overflow-y: scroll;
+        padding-bottom: 140px;
+    }
+}
+
+.page {
+    display: block;
+    position: relative;
+    min-height: 100vh;
+
+    &__phone {
+        display: block;
+        height: 540px;
+        width: 290px;
+        left: calc(50% - 145px);
+        top: 20px;
+
+        @media (min-height:0px) and (max-height:720px) {
+            transform: scale(0.9) translateY(-25px);
+        }
+    }
+}

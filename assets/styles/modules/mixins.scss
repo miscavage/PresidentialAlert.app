@@ -1,0 +1,44 @@
+/// Input placeholder
+@mixin input-placeholder {
+    &.placeholder { @content; }
+}
+ 
+/// Position in center
+/// @example scss
+///    @include abs-center(150px, 100px, 75px, 50px);
+/// @param {Number} $height - Height in pixels of element
+/// @param {Number} $width - Width in pixels of element
+/// @param {Number} $topHalf - Top half
+/// @param {Number} $leftHalf - Left half
+@mixin abs-center($height, $width, $topHalf, $leftHalf) {
+    height: $height;
+    width: $width;
+    top: calc(50% - #{$topHalf});
+    left: calc(50% - #{$leftHalf});
+}
+
+/// Position absolute on page
+/// @example scss
+///    @include abs-position(125px, auto, 50px, 15px);
+/// @param {Number} $top [default: auto]
+/// @param {Number} $right [default: auto]
+/// @param {Number} $bottom [default: auto]
+/// @param {Number} $left [default: auto]
+@mixin abs-position($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+}
+
+/// Set text sizing
+/// @example scss
+///    @include text-sizing(14px, 500, 20px);
+/// @param {Number} $fontSize [default: null]
+/// @param {Number} $fontWeight [default: null]
+/// @param {Number} $lineHeight [default: null]
+@mixin text-sizing($fontSize: null, $fontWeight: null, $lineHeight: null) {
+    @if ($fontSize) { font-size: $fontSize; }
+    @if ($fontWeight) { font-weight: $fontWeight; }
+    @if ($lineHeight) { line-height: $lineHeight; }
+}

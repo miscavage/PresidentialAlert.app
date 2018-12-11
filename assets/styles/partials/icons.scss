@@ -1,0 +1,29 @@
+.icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--sm {
+        background-size: 65%;
+    }
+
+    &__twitter {
+        background-image: url(../images/icons/twitter.png);
+    }
+    
+    &__alert {
+        background-image: url(../images/icons/alert.png);
+    }
+
+    &__connectivity {
+        background-image: url(../images/icons/connectivity-icons.png);
+    }
+
+    &__invert {
+        background-image: url(../images/icons/invert.png);
+    }
+
+    &__upload {
+        background-image: url(../images/icons/upload.png);
+    }
+}

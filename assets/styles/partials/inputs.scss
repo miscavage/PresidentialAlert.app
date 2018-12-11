@@ -1,0 +1,29 @@
+/// Imports
+@import "../modules/variables";
+@import "../modules/mixins";
+
+input,
+textarea {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    background-color: $color_transparent;
+
+    @include input-placeholder {
+        color: $color_grey;
+    }
+}
+
+.textbox {
+    color: $color_black;
+    background-color: $color_transparent;
+
+    @include text-sizing(14px null, 22px);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
