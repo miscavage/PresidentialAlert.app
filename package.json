@@ -1,0 +1,34 @@
+{
+  "name": "presidentialalert.app",
+  "version": "1.0.0",
+  "description": "PresidentialAlert.app (Presidential Alert generator) website using Next.js and Serverless to deploy to AWS S3 and CloudFront.",
+  "main": "index.js",
+  "homepage": "http://github.com/miscavage/PresidentialAlert.app",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/miscavage/PresidentialAlert.app"
+  },
+  "keywords": [
+    "presidential",
+    "alert",
+    "generator",
+    "next.js",
+    "serverless",
+    "scss",
+    "gulp",
+    "bem",
+    "js"
+  ],
+  "author": {
+    "name": "Mark Miscavage",
+    "email": "markmiscavage@protonmail.com"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
