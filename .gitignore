@@ -3,3 +3,5 @@ jspm_packages
 .serverless
 .next
 env.yml
+app
+static
