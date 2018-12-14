@@ -5,6 +5,7 @@ const Constants = require('./constants');
  * @description Get current time in format 'hour:minute'
  * @function getTime
  * @kind constant
+ * @returns {String}
  */
 const getTime = () => {
     let now = new Date();
@@ -23,6 +24,7 @@ const getTime = () => {
  * @description Get current date in format 'dayName, monthName day'
  * @function getDate
  * @kind constant
+ * @returns {String}
  */
 const getDate = () => {
     /**
