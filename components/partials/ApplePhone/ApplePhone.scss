@@ -1,0 +1,224 @@
+/// Imports
+@import "../../../assets/styles/modules/mixins";
+@import "../../../assets/styles/modules/variables";
+
+/// Apple Phone
+.apple-phone {
+    display: block;
+
+    * {
+        font-family: 'Helvetica Neue', serif;
+    }
+
+    &--system {
+        font-family: -apple-system;
+    }
+
+    &__background {
+        display: block;
+        overflow: hidden;
+        border-radius: 30px;
+        z-index: 1;
+
+        @include abs-center(480px, 236px, 255px, 118px);
+    }
+    
+    &__border {
+        display: block;
+        background-image: url(../images/photos/phone.png);
+        z-index: 2;
+    }
+
+    &__content {
+        display: block;
+        overflow: hidden;
+        border-radius: 25px;
+        z-index: 4;
+
+        @include abs-center(470px, 214px, 252px, 107px);
+    }
+
+    &__text {
+        color: $color_white;
+
+        &--inverted {
+            color: $color_black;
+        }
+    }
+}
+
+/// Apple Phone Content
+.apple-phone-content {
+    display: block;
+
+    &__upper {
+        display: block;
+        height: 30px;
+
+        @include abs-position(0, 0, auto, 0);
+    }
+
+    &__header {
+        display: block;
+        height: 90px;
+
+        @include abs-position(50px, 10px, auto, 10px);
+    }
+
+    &__alert-block {
+        display: block;
+
+        @include abs-position(134px, 6px, auto, 6px);
+    }
+}
+
+/// Apple Phone Content Upper
+.apple-phone-content-upper {
+    &__carrier {
+        display: block;
+        text-align: center;
+        width: 35px;
+
+        @include abs-position(10px, auto, auto, 10px);
+        @include text-sizing(10px, 400);
+    }
+    
+    &__connectivity {
+        display: block;
+        height: 7px;
+        width: 40px;
+
+        @include abs-position(14px, 5px);
+
+        &--inverted {
+            filter: invert(1);
+        }
+    }
+    
+    &__connectivity-icon {
+        display: block;
+        height: 7px;
+    }
+}
+
+/// Apple Phone Content Header
+.apple-phone-content-header {
+    display: block;
+
+    &__time {
+        display: block;
+        text-align: center;
+
+        @include text-sizing(52px, 200, 52px);
+    }
+
+    &__date {
+        display: block;
+        text-align: center;
+        margin-top: 2px;
+
+        @include text-sizing(12px, null, 18px);
+    }
+}
+
+/// Apple Alert Block
+.apple-alert-block {
+    display: block;
+    overflow: hidden;
+    max-height: 270px;
+    border-radius: 8px;
+
+    * {
+        font-family: 'Helvetica Neue', serif;
+        font-family: -apple-system;
+    }
+
+    &__blur {
+        display: block;
+        background-color: rgba(255,255,255,0.8);
+        filter: blur(20px);
+
+        @include abs-position(-25px, -25px, -25px, -25px);
+    }
+
+    &__container {
+        display: block;
+        z-index: 2;
+    }
+
+    &__upper {
+        display: block;
+        overflow: hidden;
+        height: 16px;
+        margin:6px 0 4px;
+    }
+
+    &__content {
+        display: block;
+        padding: 0 8px 8px;
+    }
+}
+
+/// Apple Alert Upper
+.apple-alert-upper {
+    display: block;
+    height: 16px;
+
+    &__icon-block {
+        display: block;
+        width: 12px;
+        height: 12px;
+        left: 8px;
+        margin: 2px 0;
+    }
+
+    &__icon {
+        display: block;
+        height: 12px;
+        width: 12px;
+    }
+
+    &__title {
+        display: block;
+        color: $color_black;
+        left: 24px;
+        right: 50px;
+
+        @include text-sizing(8px, 400, 16px);
+    }
+
+    &__elapsed-time {
+        display: block;
+        color: $color_black;
+        background-color: transparent;
+        text-align: right;
+        right: 10px;
+        width: 40px;
+
+        @include text-sizing(8px, null, 16px);
+    }
+}
+
+/// Apple Alert Content
+.apple-alert-content {
+    display: block;
+
+    &__title {
+        display: block;
+        margin-bottom: 4px;
+
+        @include text-sizing(9px, 700);
+    }
+
+    &__textbox {
+        display: block;
+        color: $color_black;
+        height: auto;
+        max-height: 220px;
+        width: 100%;
+        max-width: 100%;
+        resize: none;
+
+        @include text-sizing(8px, 400, 10px);
+    }
+}
