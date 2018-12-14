@@ -43,5 +43,8 @@
     "gulp-sass-multi-inheritance": "^1.0.2",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^5.0.1",
+    "serverless": "^1.33.2",
+    "serverless-cloudfront-invalidate": "^1.2.1",
+    "serverless-s3-sync": "^1.7.1"
   }
 }
