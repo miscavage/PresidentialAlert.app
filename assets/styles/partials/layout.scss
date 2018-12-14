@@ -27,6 +27,7 @@ html, body {
     @media (min-height:0px) and (max-height:640px) {
         overflow: hidden;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
         padding-bottom: 140px;
     }
 }
