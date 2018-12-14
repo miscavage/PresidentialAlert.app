@@ -2,4 +2,4 @@ node_modules
 jspm_packages
 .serverless
 .next
-.env
+env.yml
