@@ -1,0 +1,106 @@
+
+service: presidential-alert-app
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+custom:
+  s3Sync:
+    - bucketName: ${file(env.yml):S3_BUCKET_NAME}
+      localDir: app
+  cloudfrontInvalidate:
+    distributionIdKey: 'CDNDistributionId'
+    items:
+      - '/*'
+
+plugins:
+  - serverless-s3-sync
+  - serverless-cloudfront-invalidate
+    
+provider:
+  name: aws
+  runtime: nodejs8.10
+  profile: serverless-profile--presidential-alert-app
+  stage: ${file(env.yml):ENVIRONMENT}
+  environment:
+    S3_BUCKET_NAME: ${file(env.yml):S3_BUCKET_NAME}
+  
+resources:
+  Resources:
+    
+    ## CloudFront Origin Access Identity
+    PAAOriginAccessIdentity:
+      Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+      Properties:
+        CloudFrontOriginAccessIdentityConfig:
+          Comment: ${file(env.yml):S3_BUCKET_NAME}
+
+    ## S3 Bucket
+    PAAS3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${file(env.yml):S3_BUCKET_NAME}
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
+    
+    ## S3 Bucket Policy
+    PAAS3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: PAAS3Bucket
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal:
+                CanonicalUser: !GetAtt [PAAOriginAccessIdentity, S3CanonicalUserId]
+              Action:
+              - s3:GetObject
+              Resource: arn:aws:s3:::${file(env.yml):S3_BUCKET_NAME}/*
+
+    ## CloudFront Distribution
+    PAACloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Origins:
+            - DomainName: ${file(env.yml):S3_BUCKET_NAME}.s3.amazonaws.com
+              S3OriginConfig:
+                OriginAccessIdentity: !Join ['', ['origin-access-identity/cloudfront/', !Ref 'PAAOriginAccessIdentity']]
+              Id: ${file(env.yml):CLOUDFRONT_DISTRIBUTION_ID}
+          Enabled: 'true'
+          HttpVersion: http2
+          Aliases:
+          - www.presidentialalert.app
+          - presidentialalert.app
+          PriceClass: PriceClass_100
+          DefaultRootObject: index.html
+          CustomErrorResponses:
+            - ErrorCode: 404
+              ResponseCode: 200
+              ResponsePagePath: /index.html
+          DefaultCacheBehavior:
+            AllowedMethods:
+              - GET
+              - HEAD
+              - OPTIONS
+            DefaultTTL: 86400
+            MinTTL: 86400
+            TargetOriginId: ${file(env.yml):CLOUDFRONT_DISTRIBUTION_ID}
+            ForwardedValues:
+              QueryString: 'false'
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: redirect-to-https
+          ViewerCertificate:
+            MinimumProtocolVersion: TLSv1.1_2016
+            SslSupportMethod: 'sni-only'
+            AcmCertificateArn: ${file(env.yml):SSL_CERTIFICATE_ARN}
+
+  Outputs:
+    ## CloudFront Distribution Id
+    CDNDistributionId:
+      Description: 'CDN Distribution Id'
+      Value: !Ref PAACloudFrontDistribution
