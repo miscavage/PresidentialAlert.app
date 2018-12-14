@@ -1,0 +1,211 @@
+/// Imports
+@import "../../../assets/styles/modules/mixins";
+@import "../../../assets/styles/modules/variables";
+
+/// Footer
+.footer {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 90px;
+
+    @include abs-position(auto, 0, 0, 0);
+
+    &__buttons-block {
+        display: block;
+        padding: 10px 0;
+
+        @include abs-center(auto, 640px, 50%, 320px);
+    }
+    
+    &__buttons-block-item {
+        display: inline-block;
+    }
+
+    &__btn-divider {
+        display: inline-block;
+        color: $color_red;
+        width: 44px;
+        vertical-align: middle;
+        text-align: left;
+        
+        transform: rotateZ(-90deg) translateY(5px) translateX(-10px);
+
+        @include text-sizing(9px, 600, 20px);
+    }
+
+    &__btn {
+        display: inline-block;
+        color: $color_white;
+        height: 44px;
+        vertical-align: top;
+        padding: 0 20px;
+        border-radius: 4px;
+        margin-right: 6px;
+        border-bottom: 5px solid #ad0000;
+
+        @include text-sizing(14px, 700, 40px);
+
+        &--w-icon {
+            width:54px;
+            padding:0;
+        }
+
+        &:active {
+            height: 40px;
+            border-bottom: 0;
+            transform: translateY(4px);
+        }
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__btn-file-input {
+        display: block;
+        visibility: hidden;
+    }
+
+    &__btn-icon {
+        display: inline-block;
+        height: 22px;
+        width: 30px;
+        vertical-align: middle;
+        margin: 7px 0;
+    }
+
+    &__attribution-block {
+        display: block;
+        height: 30px;
+
+        @include abs-position(auto, 0, 0, 0);
+
+         * {
+            @include text-sizing(12px, null, 15px);
+        }
+    }
+    
+    &__attribution-link {
+        color: $color_grey;
+        text-decoration: none;
+    
+        * {
+            display: inline;
+            color: $color_grey;
+
+            @include text-sizing(12px, null, 15px);
+        }
+    }
+
+    @media (min-width:640) and (max-width:860px){
+        height: 100px;
+
+        &__buttons-block {
+            padding: 0;
+            position: relative;
+        }
+        
+        &__btn-divider {
+            width: 34px;
+        }
+
+        &__btn {
+            height: 38px;
+            margin-right: 2px;
+
+            @include text-sizing(12px, null, 36px);
+
+            &:active {
+                height: 35px;
+            }
+        }
+        
+        &__btn-icon {
+            height: 20px;
+            width: 28px;
+            margin: 0 0 5px 5px;
+        }
+        
+        &__attribution-block {
+            height: auto;
+            position: relative;
+            margin: 25px 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    @media (min-width:0) and (max-width:640px) {
+        position: fixed;
+        height: 52px;
+
+        @include abs-position(auto, 0, 0, 0);
+
+        &__btn-divider {
+            width: 20px;
+            color: $color_red--dark;
+            transform: rotate(-90deg) translateY(0px) translateX(-20px);
+        }
+
+        &__btn {
+            margin: 4px 2px;
+            height: 38px;
+            padding: 0;
+            width: 44px;
+            border: 1px solid $color_red--dark;
+
+            @include text-sizing(8px, null, 38px);
+
+            &:active {
+                height: 38px;
+                transform: translateY(0px);
+            }
+        }
+
+        &__buttons-block {
+            padding: 0 0 10px 0;
+        }
+
+        &__btn-icon {
+            height: 18px;
+            width: 24px;
+            margin: 0 0 5px 0px;
+        }
+
+        &__attribution-block {
+            height: 20px;
+
+            @include abs-position(auto, 0, 56px, 0);
+
+            * {
+                line-height: 20px;
+            }
+        }
+    }
+
+    @media (min-width:0) and (max-width:400px) {
+        &__btn-divider {
+            display: none;
+        }
+
+        &__buttons-block-item {
+            margin-right: 4px;
+        }
+
+        &__btn {
+            margin: 4px 1px;
+            width: 38px;
+        }
+    }
+
+    @media (min-height:0px) and (max-height:640px) {
+        &__btn-divider {
+            display: none;
+        }
+
+        &__buttons-block-item {
+            margin-right: 8px;
+        }
+    }   
+}

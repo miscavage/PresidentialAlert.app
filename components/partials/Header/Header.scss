@@ -1,0 +1,66 @@
+/// Imports
+@import "../../../assets/styles/modules/variables";
+@import "../../../assets/styles/modules/mixins";
+
+/// Header
+.header {
+    display: block;
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+    position: relative;
+
+    &__title {
+        display: block;
+        color: $color_black;
+
+        @include text-sizing(44px, 900, 60px);
+    }
+
+    &__subtitle {
+        display: block;
+        color: $color_black;
+
+        @include text-sizing(20px, 700, 40px);
+    }
+
+    &__link {
+        color: $color_black;
+        text-decoration: underline;
+    }
+
+    @media (min-height:700px) and (max-height:800px) {
+        padding-top: 15px;
+
+        &__title {
+            @include text-sizing(32px, null, 36px);
+        }
+
+        &__subtitle {
+            @include text-sizing(16px, null, 24px);
+        }
+    }
+
+    @media (min-width:0) and (max-width:640px) {
+        &__title {
+            @include text-sizing(24px, null, 30px);
+        }
+
+        &__subtitle {
+            @include text-sizing(14px, null, 22px);
+        }
+    }
+
+    @media (min-height:0) and (max-height:700px) {
+        padding-top: 15px;
+        height: 72px;
+
+        &__title {
+            @include text-sizing(24px, null, 30px);
+        }
+
+        &__subtitle {
+            @include text-sizing(14px, null, 22px);
+        }
+    }
+}
