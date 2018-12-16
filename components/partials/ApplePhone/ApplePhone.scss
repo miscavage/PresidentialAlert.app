@@ -11,7 +11,9 @@
     }
 
     &--system {
-        font-family: -apple-system;
+        * {
+            font-family: -apple-system !important;
+        }
     }
 
     &__background {
@@ -127,11 +129,6 @@
     overflow: hidden;
     max-height: 270px;
     border-radius: 8px;
-
-    * {
-        font-family: 'Helvetica Neue', serif;
-        font-family: -apple-system;
-    }
 
     &__blur {
         display: block;
