@@ -5,7 +5,6 @@ import React from 'react';
 const Constants = require('../helpers/constants');
 
 //Components
-import Meta from '../components/partials/Meta/Meta';
 import Header from '../components/partials/Header/Header';
 import Footer from '../components/partials/Footer/Footer';
 import ApplePhone from '../components/partials/ApplePhone/ApplePhone';
@@ -128,8 +127,6 @@ class Index extends React.Component {
     render() {
         return (
             <div className='layout rel rel--viewport'>
-                
-                <Meta />
 
                 <div className={`background-image image image--cover fixed ${this.state.isSaving ? 'hidden' : ''}`}></div>
 
