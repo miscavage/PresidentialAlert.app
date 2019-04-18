@@ -78,8 +78,8 @@ class ApplePhone extends React.Component {
                         <div className='apple-phone-content__upper abs'>
                             <div className='apple-phone-content-upper rel rel--full'>
                                 <label className='visuallyhidden' htmlFor='carrier-textbox'>Carrier Textbox</label>
-                                <input ref={this.carrierTextbox} id='carrier-textbox' className={`apple-phone-content-upper__carrier apple-phone__text abs ${this.props.inverted ? 'apple-phone__text--inverted' : ''}`} {...inputDefaults} placeholder='Carrier' defaultValue={Constants.DEFAULTS.CARRIER} maxLength='10' />
-                        
+                                <input ref={this.carrierTextbox} aria-label="Carrier Textbox" id='carrier-textbox' className={`apple-phone-content-upper__carrier apple-phone__text abs ${this.props.inverted ? 'apple-phone__text--inverted' : ''}`} {...inputDefaults} placeholder='Carrier' defaultValue={Constants.DEFAULTS.CARRIER} maxLength='10' />
+
                                 <div className={`apple-phone-content-upper__connectivity abs ${this.props.inverted ? 'apple-phone-content-upper__connectivity--inverted' : ''}`}>
                                     <i className='apple-phone-content-upper__connectivity-icon icon icon__connectivity'></i>
                                 </div>
@@ -107,7 +107,7 @@ class ApplePhone extends React.Component {
                                                 <i className='apple-alert-upper__icon icon icon__alert'></i>
                                             </div>
                                             <span className='apple-alert-upper__title abs'>EMERGENCY ALERT</span>
-                                            <label className='visuallyhidden' htmlFor='elapsed-time-textbox'>Elapsed Time Textbox</label>
+                                            <label className='visuallyhidden' aria-label="Elapsed Time Textbox" htmlFor='elapsed-time-textbox'>Elapsed Time Textbox</label>
                                             <input ref={this.elapsedTimeTextbox} id='elapsed-time-textbox' className='apple-alert-upper__elapsed-time abs' {...inputDefaults} defaultValue={Constants.DEFAULTS.ELAPSED_TIME} />
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@ class ApplePhone extends React.Component {
                                         <div className='apple-alert-content'>
                                             <span className='apple-alert-content__title'>Presidential Alert</span>
                                             <label className='visuallyhidden' htmlFor='alert-text-area'>Presidential Alert Textbox</label>
-                                            <AlertTextArea ref={this.alertTextbox} classes='apple-alert-content__textbox'/>
+                                            <AlertTextArea ref={this.alertTextbox} aria-label="Presidential Alert Textbox" classes='apple-alert-content__textbox'/>
                                         </div>
                                     </div>
 
