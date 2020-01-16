@@ -12,9 +12,8 @@ ___
 
 Here's some of the highlights:
 
-![Product Hunt Post](http://imgs.fyi/img/6vcg.jpg)
-![r/MemeEconomy](http://imgs.fyi/img/6vce.jpg)
-![Stats](http://imgs.fyi/img/6vcf.jpg)
+![Product Hunt Post](https://github.com/miscavage/PresidentialAlert.app/raw/master/readme/presidential-alert-product-hunt-post.png)
+![r/MemeEconomy](https://github.com/miscavage/PresidentialAlert.app/raw/master/readme/reddit-meme-economy-post.jpg)
 
 ## • Tech
 
@@ -22,7 +21,7 @@ Here's some of the highlights:
 
 And just because:
 
-![Audit](http://imgs.fyi/img/6vdj.jpg)
+![Audit](https://github.com/miscavage/PresidentialAlert.app/raw/master/readme/presidential-alert-web-audit.png)
 
 ___
 ### • Set up
