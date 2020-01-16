@@ -90,7 +90,7 @@ Tweet at me: [@markmiscavage](https://twitter.com/markmiscavage).
 
 MIT License
 
-Copyright (c) 2018 Mark Miscavage
+Copyright (c) 2020 Mark Miscavage
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
