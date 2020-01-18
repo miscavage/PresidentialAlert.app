@@ -19,8 +19,6 @@ Here's some of the highlights:
 
 [PresidentialAlert.app](https://www.presidentialalert.app) is a static website built using Next.js and SCSS. Gulp is used to build and bundle static assets (fonts, styles, images) into the `/static` folder for Next.js. It also uses serverless to deploy to AWS S3 and CloudFront. I have a Route 53 domain set up to the CloudFront distribution which is connected to the static S3 bucket.
 
-And just because:
-
 ![Audit](https://github.com/miscavage/PresidentialAlert.app/raw/master/readme/presidential-alert-web-audit.png)
 
 ___
